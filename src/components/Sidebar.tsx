@@ -15,7 +15,7 @@ export default function SideBar() {
       </div>
       {options.map((option) => {
         return (
-          <div>
+          <div key={option}>
             <h1
               className="text-2xl font-medium hover:bg-purple-600 m-3 px-3 py-4 rounded-md align-middle
         transition ease-in-out hover:cursor-pointer"
