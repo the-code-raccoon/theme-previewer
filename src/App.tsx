@@ -1,5 +1,6 @@
 import "./App.css";
-import Card from "./components/Card";
+import CardImageSide from "./components/CardImageSide";
+import CardImageTop from "./components/CardImageTop";
 import SideBar from "./components/Sidebar";
 
 function App() {
@@ -7,8 +8,8 @@ function App() {
     <div className="bg-slate-800 min-h-screen flex">
       <SideBar />
       <div className="p-10">
-        <Card />
-        <h1 className="text-3xl font-bold">Hello world!</h1>
+        <CardImageSide />
+        <CardImageTop />
       </div>
     </div>
   );
