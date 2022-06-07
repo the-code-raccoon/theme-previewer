@@ -1,10 +1,9 @@
 interface ThemeSidebarProps {
-  accent1: string;
-  setAccent1: Function;
+  setNewColour: Function;
 }
 
-export default function ThemeSidebar(props: ThemeSidebarProps) {
-  const { accent1, setAccent1 } = props;
+export default function ThemeSidebar(props: any) {
+  const { setNewColour } = props;
 
   const validTailwindColour = (str: string) => {
     str = str.toLowerCase();
@@ -13,9 +12,9 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
     );
   };
 
-  const validHex = (str: string) => {
-    
-  }
+  // const validHex = (str: string) => {
+
+  // }
 
   return (
     <div className="bg-slate-900 w-[600px] min-h-screen p-5 text-lg">
@@ -32,7 +31,7 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
             onChange={(event) => {
               const colour = event.target.value;
               if (validTailwindColour(colour)) {
-                setAccent1(colour);
+                setNewColour("accent1", colour);
               }
             }}
           />

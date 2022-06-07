@@ -7,7 +7,7 @@ let result = "";
 
 for (const colour of colours) {
   result += `bg-${colour}-50 `;
-  for (let i = 100; i < 900; i += 100) {
+  for (let i = 100; i <= 900; i += 100) {
     result += `bg-${colour}-${i} `;
   }
 }
