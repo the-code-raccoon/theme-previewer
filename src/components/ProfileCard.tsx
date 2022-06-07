@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 interface ProfileCardProps {
   name: string;
   colour: string;
@@ -6,6 +8,8 @@ interface ProfileCardProps {
 
 export default function ProfileCard(props: ProfileCardProps) {
   const { name, colour, pic } = props;
+
+  useEffect(() => {}, [])
 
   return (
     <div className="mx-auto mb-10 bg-white rounded-xl shadow-md overflow-hidden w-72">

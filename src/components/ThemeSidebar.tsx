@@ -6,13 +6,18 @@ interface ThemeSidebarProps {
 export default function ThemeSidebar(props: ThemeSidebarProps) {
   const { accent1, setAccent1 } = props;
 
+  const validColour = (str: string) => {
+    str = str.toLowerCase();
+    return /^(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(50|[1-9]00)$/gm.test(
+      str
+    );
+  };
+
   return (
-    <div className="bg-slate-700 w-[600px] min-h-screen p-5 text-lg">
+    <div className="bg-slate-900 w-[600px] min-h-screen p-5 text-lg">
       <div>
         <div>
-          <h1 className="text-xl text-white">
-            Input colours as hex codes (ex. #ffffff)
-          </h1>
+          <h1 className="text-xl text-white">Input tailwind colour code</h1>
         </div>
         <div className="my-3">
           <span className="text-white">Accent Colour 1: </span>
@@ -21,9 +26,10 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
             className="m-3 rounded-md py-1 px-3"
             placeholder="ffffff"
             onChange={(event) => {
-              console.log(event.target.value);
-              if (event.target.value === "purple-600") {
-                setAccent1("red-900");
+              const colour = event.target.value;
+              if (validColour(colour)) {
+                console.log(colour)
+                setAccent1(colour);
               }
             }}
           />
