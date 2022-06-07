@@ -22,11 +22,12 @@ export default function App() {
     },
   ];
 
-  const [accent1, setAccent1] = useState("sky-600");
+  // const [accent1, setAccent1] = useState("sky-600");
 
   return (
     <div className="bg-slate-800 min-h-screen flex w-100">
-      <SideBar accent1={accent1} />
+      {/* <SideBar accent1={accent1} /> */}
+      <SideBar />
       <div className="basis-full">
         <Banner />
         <div className="container p-10 columns-1 xl:columns-3 mx-auto">
@@ -44,7 +45,6 @@ export default function App() {
           })}
         </div>
       </div>
-      <ThemeSidebar accent1={accent1} setAccent1={setAccent1} />
     </div>
   );
 }

@@ -1,9 +1,9 @@
 interface SideBarProps {
-  accent1: string;
+  // accent1: string;
 }
 
 export default function SideBar(props: SideBarProps) {
-  const { accent1 } = props;
+  // const { accent1 } = props;
 
   const options = [
     "Dashboard",
@@ -15,7 +15,7 @@ export default function SideBar(props: SideBarProps) {
   ];
 
   return (
-    <div className={`bg-${accent1} w-[500px] min-h-screen`}>
+    <div className="bg-neutral-900 w-[500px] min-h-screen">
       <div className="px-5 py-3 mt-3">
         <h1 className="text-6xl font-semibold">Logo</h1>
       </div>
