@@ -4,6 +4,7 @@ import CardImageSide from "./components/CardImageSide";
 import CardImageTop from "./components/CardImageTop";
 import ProfileCard from "./components/ProfileCard";
 import SideBar from "./components/Sidebar";
+import ThemeSidebar from "./components/ThemeSidebar";
 
 export default function App() {
   const profiles = [
@@ -39,6 +40,7 @@ export default function App() {
           })}
         </div>
       </div>
+      <ThemeSidebar />
     </div>
   );
 }
