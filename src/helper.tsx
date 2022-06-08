@@ -6,9 +6,9 @@
 // let result = "";
 
 // for (const colour of colours) {
-//   result += `hover:bg-${colour}-50 `;
+//   result += `text-${colour}-50 `;
 //   for (let i = 100; i <= 900; i += 100) {
-//     result += `hover:bg-${colour}-${i} `;
+//     result += `text-${colour}-${i} `;
 //   }
 // }
 

@@ -6,8 +6,8 @@ export default function useThemeHook() {
     accent2: "sky-300",
     accent3: "slate-50",
     background: "slate-800",
-    text1: "",
-    text2: "",
+    text1: "black",
+    text2: "white",
   });
 
   const setNewColour = function (type: string, colour: string) {

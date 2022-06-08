@@ -1,18 +1,17 @@
-import { useEffect } from "react";
+import { lighter } from "../helper";
 
 interface ProfileCardProps {
   name: string;
   colour: string;
   pic: string;
+  theme: any;
 }
 
 export default function ProfileCard(props: ProfileCardProps) {
-  const { name, colour, pic } = props;
-
-  useEffect(() => {}, [])
+  const { name, colour, pic, theme } = props;
 
   return (
-    <div className="mx-auto mb-10 bg-white rounded-xl shadow-md overflow-hidden w-72">
+    <div className={`mx-auto mb-10 bg-${lighter(theme.background)} rounded-xl shadow-md overflow-hidden w-72`}>
       <div>
         <div>
           <div
@@ -28,11 +27,11 @@ export default function ProfileCard(props: ProfileCardProps) {
         <div className="p-8">
           <a
             href="/"
-            className="block mt-1 text-lg leading-tight font-medium text-black hover:underline"
+            className={`block mt-1 text-lg leading-tight font-medium text-${theme.text2} hover:underline`}
           >
             {name}
           </a>
-          <p className="mt-2 text-slate-500">
+          <p className="mt-2 text-slate-300">
             Getting a new business off the ground is a lot of hard work. Here
             are five ideas you can use to find your first customers.
           </p>
