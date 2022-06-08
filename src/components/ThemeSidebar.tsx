@@ -1,3 +1,5 @@
+import ThemeInput from "./ThemeInput";
+
 interface ThemeSidebarProps {
   setNewColour: Function;
 }
@@ -12,9 +14,21 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
     );
   };
 
-  // const validHex = (str: string) => {
+  const onChangeInput = (event: any) => {
+    if (validTailwindColour(event.target.value)) {
+      console.log(event.target.name);
+      setNewColour("accent1", event.target.value);
+    }
+  };
 
-  // }
+  const inputs = [
+    { text: "Accent Colour 1", name: "accent1" },
+    { text: "Accent Colour 2", name: "accent2" },
+    { text: "Accent Colour 3", name: "accent3" },
+    { text: "Background Colour", name: "background" },
+    { text: "Text Colour (Main)", name: "text1" },
+    { text: "Text Colour (Secondary)", name: "text2" },
+  ];
 
   return (
     <div className="bg-slate-900 w-[600px] min-h-screen p-5 text-lg">
@@ -22,40 +36,15 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
         <div>
           <h1 className="text-xl text-white">Input tailwind colour code</h1>
         </div>
-        <div className="my-3">
-          <span className="text-white">Accent Colour 1: </span>
-          <input
-            type="text"
-            className="m-3 rounded-md py-1 px-3"
-            placeholder="ex. sky-300"
-            onChange={(event) => {
-              if (validTailwindColour(event.target.value)) {
-                console.log(event.target.name)
-                setNewColour("accent1", event.target.value);
-              }
-            }}
-          />
-        </div>
-        <div className="my-3">
-          <span className="text-white">Accent Colour 2: </span>
-          <input type="text" className="m-3 rounded-md py-1 px-3" />
-        </div>
-        <div className="my-3">
-          <span className="text-white">Accent Colour 3: </span>
-          <input type="text" className="m-3 rounded-md py-1 px-3" />
-        </div>
-        <div className="my-3">
-          <span className="text-white">Background: </span>
-          <input type="text" className="m-3 rounded-md py-1 px-3" />
-        </div>
-        <div className="my-3">
-          <span className="text-white">Text Colour (Main): </span>
-          <input type="text" className="m-3 rounded-md py-1 px-3" />
-        </div>
-        <div className="my-3">
-          <span className="text-white">Text Colour (Secondary): </span>
-          <input type="text" className="m-3 rounded-md py-1 px-3" />
-        </div>
+        {inputs.map((input) => {
+          return (
+            <ThemeInput
+              text={input.text}
+              name={input.name}
+              onChangeInput={onChangeInput}
+            />
+          );
+        })}
       </div>
     </div>
   );

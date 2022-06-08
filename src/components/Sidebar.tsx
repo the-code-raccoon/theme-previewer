@@ -39,8 +39,8 @@ export default function SideBar(props: SideBarProps) {
         })}
       </div>
       <div className="w-100 flex justify-center">
-        <CustomButton colour={theme.accent1}>Login</CustomButton>
-        <CustomButton colour={theme.accent1}>Register</CustomButton>
+        <CustomButton colour={theme.accent2}>Login</CustomButton>
+        <CustomButton colour={theme.accent2}>Register</CustomButton>
       </div>
     </div>
   );
