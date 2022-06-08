@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function useThemeHook() {
   const [theme, setTheme] = useState({
-    accent1: "orange-300",
+    accent1: "orange-400",
     accent2: "sky-300",
     background: "slate-800",
     text1: "black",
