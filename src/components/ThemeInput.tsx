@@ -1,9 +1,28 @@
 import { useState } from "react";
 
 export default function ThemeInput(props: any) {
-  const { text, name, onChangeInput, placeholder } = props;
+  const { text, name, onChangeInput, placeholder, setNewColour } = props;
 
   const [showModal, setShowModal] = useState(false);
+
+  const colours =
+    "slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose".split(
+      "|"
+    );
+
+  const selectColour = (event: any) => {
+    setShowModal(false);
+
+    if (
+      event.target.classList[0] === "bg-black" ||
+      event.target.classList[0] === "bg-white"
+    ) {
+      setNewColour(name, event.target.classList[0].split("-")[1]);
+      return;
+    }
+    const split = event.target.classList[0].split("-");
+    setNewColour(name, `${split[1]}-${split[2]}`);
+  };
 
   return (
     <div className="my-3">
@@ -30,39 +49,58 @@ export default function ThemeInput(props: any) {
             ? "fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
             : "hidden"
         }
-        id="my-modal"
+        onClick={() => setShowModal(false)}
       ></div>
       <div
         className={
           showModal
-            ? "absolute inset-0 m-auto p-5 w-96 h-96 shadow-lg rounded-md bg-slate-800"
+            ? "absolute inset-x-0 top-0 m-auto p-5 w-96 shadow-lg rounded-md bg-slate-800"
             : "hidden"
         }
       >
         <div className="mt-3 text-center">
-          <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100">
-            <svg
-              className="h-6 w-6 text-green-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 13l4 4L19 7"
-              ></path>
-            </svg>
-          </div>
-          <h3 className="text-lg leading-6 font-medium text-gray-900">
-            Successful!
+          <h3 className="text-lg leading-6 font-medium text-white">
+            Select a colour
           </h3>
-          <div className="mt-2 px-7 py-3">
-            <p className="text-sm text-gray-500">
-              Account has been successfully registered!
-            </p>
+          <div className="text-white">
+            {colours.map((colour) => {
+              const colourlist = [];
+              colourlist.push(
+                <button
+                  className={`bg-${colour}-50 h-[30px] w-[30px] border-solid border-slate-900 border`}
+                  onClick={selectColour}
+                />
+              );
+              for (let i = 100; i <= 900; i += 100) {
+                colourlist.push(
+                  <button
+                    className={`bg-${colour}-${i} h-[30px] w-[30px] border-solid border-slate-900 border`}
+                    onClick={selectColour}
+                  />
+                );
+              }
+
+              return (
+                <div className="flex flex-row align-center">
+                  {colour}
+                  {colourlist}
+                </div>
+              );
+            })}
+            <div className="flex flex-row align-center">
+              Black
+              <button
+                className={`bg-black h-[30px] w-[30px] border-solid border-slate-900 border`}
+                onClick={selectColour}
+              />
+            </div>
+            <div className="flex flex-row align-center">
+              White
+              <button
+                className={`bg-white h-[30px] w-[30px] border-solid border-slate-900 border`}
+                onClick={selectColour}
+              />
+            </div>
           </div>
           <div className="items-center px-4 py-3">
             <button
