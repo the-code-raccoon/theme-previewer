@@ -38,6 +38,7 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
         {inputs.map((input) => {
           return (
             <ThemeInput
+              key={input.name}
               text={input.text}
               name={input.name}
               onChangeInput={onChangeInput}
