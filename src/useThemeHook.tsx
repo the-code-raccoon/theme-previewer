@@ -4,7 +4,6 @@ export default function useThemeHook() {
   const [theme, setTheme] = useState({
     accent1: "orange-300",
     accent2: "sky-300",
-    accent3: "slate-50",
     background: "slate-800",
     text1: "black",
     text2: "white",

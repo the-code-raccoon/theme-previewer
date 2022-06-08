@@ -41,7 +41,7 @@ export default function App() {
     <div className={`bg-${theme.background} min-h-screen flex w-100`}>
       <SideBar theme={theme} />
       <div className="basis-full">
-        <Banner />
+        <Banner theme={theme} />
         <div className="container p-10 columns-1 xl:columns-3 mx-auto">
           <CardImageSide theme={theme} />
           <CardImageTop theme={theme} />

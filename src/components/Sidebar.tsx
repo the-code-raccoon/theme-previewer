@@ -20,9 +20,9 @@ export default function SideBar(props: SideBarProps) {
 
   return (
     <div
-      className={`bg-${theme.accent1} w-[500px] min-h-screen flex flex-col justify-between pb-8`}
+      className={`bg-${theme.accent1} w-[500px] min-h-screen flex flex-col pb-8`}
     >
-      <div>
+      <div className={`text-${theme.text1}`}>
         <div className="px-5 py-3 mt-3">
           <h1 className="text-6xl font-semibold">Logo</h1>
         </div>
@@ -38,9 +38,13 @@ export default function SideBar(props: SideBarProps) {
           );
         })}
       </div>
-      <div className="w-100 flex justify-center">
-        <CustomButton colour={theme.accent2}>Login</CustomButton>
-        <CustomButton colour={theme.accent2}>Register</CustomButton>
+      <div className="w-100 flex justify-center mt-8">
+        <CustomButton colour={theme.accent2} text={theme.text1}>
+          Login
+        </CustomButton>
+        <CustomButton colour={theme.accent2} text={theme.text1}>
+          Register
+        </CustomButton>
       </div>
     </div>
   );

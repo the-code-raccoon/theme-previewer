@@ -24,7 +24,6 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
   const inputs = [
     { text: "Accent Colour 1", name: "accent1" },
     { text: "Accent Colour 2", name: "accent2" },
-    { text: "Accent Colour 3", name: "accent3" },
     { text: "Background Colour", name: "background" },
     { text: "Text Colour (Main)", name: "text1" },
     { text: "Text Colour (Secondary)", name: "text2" },
