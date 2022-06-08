@@ -16,8 +16,7 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
 
   const onChangeInput = (event: any) => {
     if (validTailwindColour(event.target.value)) {
-      console.log(event.target.name);
-      setNewColour("accent1", event.target.value);
+      setNewColour(event.target.name, event.target.value);
     }
   };
 
