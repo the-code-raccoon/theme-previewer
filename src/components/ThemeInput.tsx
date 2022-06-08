@@ -4,6 +4,7 @@ export default function ThemeInput(props: any) {
   const { text, name, onChangeInput, placeholder, setNewColour } = props;
 
   const [showModal, setShowModal] = useState(false);
+  const [input, setInput] = useState("");
 
   const colours =
     "slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose".split(
@@ -12,16 +13,17 @@ export default function ThemeInput(props: any) {
 
   const selectColour = (event: any) => {
     setShowModal(false);
-
     if (
       event.target.classList[0] === "bg-black" ||
       event.target.classList[0] === "bg-white"
     ) {
       setNewColour(name, event.target.classList[0].split("-")[1]);
+      setInput(event.target.classList[0].split("-")[1]);
       return;
     }
     const split = event.target.classList[0].split("-");
     setNewColour(name, `${split[1]}-${split[2]}`);
+    setInput(`${split[1]}-${split[2]}`);
   };
 
   return (
@@ -40,7 +42,11 @@ export default function ThemeInput(props: any) {
         className="m-3 rounded-md py-1 px-3"
         placeholder={placeholder}
         name={name}
-        onChange={onChangeInput}
+        onChange={(event) => {
+          onChangeInput(event);
+          setInput(event.target.value);
+        }}
+        value={input}
       />
 
       <div
