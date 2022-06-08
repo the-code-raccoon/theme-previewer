@@ -1,10 +1,17 @@
 import { useState } from "react";
 
 export default function ThemeInput(props: any) {
-  const { text, name, onChangeInput, placeholder, setNewColour, input, setInput } = props;
+  const {
+    text,
+    name,
+    onChangeInput,
+    placeholder,
+    setNewColour,
+    input,
+    setInput,
+  } = props;
 
   const [showModal, setShowModal] = useState(false);
-  // const [input, setInput] = useState("");
 
   const colours =
     "slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose".split(
@@ -60,12 +67,12 @@ export default function ThemeInput(props: any) {
       <div
         className={
           showModal
-            ? "absolute inset-x-0 top-0 m-auto p-5 w-96 shadow-lg rounded-md bg-slate-800"
+            ? "absolute inset-0 w-[430px] m-auto p-5 shadow-lg rounded-md bg-slate-800"
             : "hidden"
         }
       >
-        <div className="mt-3 text-center">
-          <h3 className="text-lg leading-6 font-medium text-white">
+        <div className="text-center">
+          <h3 className="text-lg leading-6 font-medium text-white mb-5">
             Select a colour
           </h3>
           <div className="text-white">
@@ -90,20 +97,22 @@ export default function ThemeInput(props: any) {
 
               return (
                 <div key={colour} className="flex flex-row align-center">
-                  {colour}
+                  <div className="w-[85px] text-left">{colour}</div>
                   {colourlist}
                 </div>
               );
             })}
             <div className="flex flex-row align-center">
-              Black
+              <div className="w-[85px] text-left">Black</div>
+
               <button
                 className={`bg-black h-[30px] w-[30px] border-solid border-slate-900 border`}
                 onClick={selectColour}
               />
             </div>
             <div className="flex flex-row align-center">
-              White
+              <div className="w-[85px] text-left">White</div>
+
               <button
                 className={`bg-white h-[30px] w-[30px] border-solid border-slate-900 border`}
                 onClick={selectColour}

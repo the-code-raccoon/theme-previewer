@@ -82,7 +82,7 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
         );
       })}
       <button
-        className={`bg-purple-300 transition ease-in-out hover:bg-purple-400 drop-shadow-lg h-[45px] px-5 mx-5 shadow rounded-md text-lg font-medium text-black`}
+        className={`bg-purple-300 transition ease-in-out hover:bg-purple-400 z-0 rop-shadow-lg h-[45px] px-5 mx-5 shadow rounded-md text-lg font-medium text-black`}
         onClick={() => {
           setNewColour("accent1", "orange-400");
           setAccent1Input("");
