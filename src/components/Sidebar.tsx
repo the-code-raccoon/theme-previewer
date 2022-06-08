@@ -1,3 +1,5 @@
+import CustomButton from "./CustomButton";
+import { darker } from "../helper";
 interface SideBarProps {
   theme: any;
 }
@@ -14,6 +16,8 @@ export default function SideBar(props: SideBarProps) {
     "Reports",
   ];
 
+  const accent1Darker = darker(theme.accent1);
+
   return (
     <div
       className={`bg-${theme.accent1} w-[500px] min-h-screen flex flex-col justify-between pb-8`}
@@ -26,8 +30,7 @@ export default function SideBar(props: SideBarProps) {
           return (
             <div key={option}>
               <h1
-                className="text-2xl font-medium hover:bg-purple-600 m-3 px-3 py-4 rounded-md align-middle
-        transition ease-in-out hover:cursor-pointer"
+                className={`text-2xl font-medium hover:bg-${accent1Darker} m-3 px-3 py-4 rounded-md align-middle transition ease-in-out hover:cursor-pointer`}
               >
                 {option}
               </h1>
@@ -36,18 +39,8 @@ export default function SideBar(props: SideBarProps) {
         })}
       </div>
       <div className="w-100 flex justify-center">
-        <button
-          className={`bg-${
-            theme.accent1
-          } transition ease-in-out hover:bg-${theme.accent2} drop-shadow-lg h-[45px] px-5 mx-5 shadow rounded-md text-lg font-medium`}
-        >
-          Login
-        </button>
-        <button
-          className={`bg-${theme.accent2} h-[45px] px-5 mx-5 shadow rounded-md text-lg font-medium`}
-        >
-          Register
-        </button>
+        <CustomButton colour={theme.accent1}>Login</CustomButton>
+        <CustomButton colour={theme.accent1}>Register</CustomButton>
       </div>
     </div>
   );
