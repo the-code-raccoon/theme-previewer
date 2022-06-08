@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 export default function ThemeInput(props: any) {
-  const { text, name, onChangeInput, placeholder, setNewColour } = props;
+  const { text, name, onChangeInput, placeholder, setNewColour, input, setInput } = props;
 
   const [showModal, setShowModal] = useState(false);
-  const [input, setInput] = useState("");
+  // const [input, setInput] = useState("");
 
   const colours =
     "slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose".split(

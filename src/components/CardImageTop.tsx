@@ -3,7 +3,6 @@ import { lighter } from "../helper";
 export default function CardImageTop(props: any) {
   const { theme } = props;
 
-  console.log(theme.text2);
   return (
     <div
       className={`max-w-md mx-auto mb-10 bg-${lighter(

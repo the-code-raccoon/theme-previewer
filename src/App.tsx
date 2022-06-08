@@ -35,8 +35,6 @@ export default function App() {
     );
   }, []);
 
-  console.log(theme);
-
   return (
     <div className={`bg-${theme.background} min-h-screen flex w-100`}>
       <SideBar theme={theme} />

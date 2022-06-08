@@ -1,4 +1,4 @@
-import CustomButton from "./CustomButton";
+import { useState } from "react";
 import ThemeInput from "./ThemeInput";
 
 interface ThemeSidebarProps {
@@ -22,19 +22,47 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
     }
   };
 
+  const [accent1Input, setAccent1Input] = useState("");
+  const [accent2Input, setAccent2Input] = useState("");
+  const [backgroundInput, setBackgroundInput] = useState("");
+  const [text1Input, setText1Input] = useState("");
+  const [text2Input, setText2Input] = useState("");
+
   const colourInputs = [
-    { text: "Accent Colour 1", name: "accent1", placeholder: "ex. orange-400" },
-    { text: "Accent Colour 2", name: "accent2", placeholder: "ex. sky-300" },
+    {
+      text: "Accent Colour 1",
+      name: "accent1",
+      placeholder: "ex. orange-400",
+      input: accent1Input,
+      setInput: setAccent1Input,
+    },
+    {
+      text: "Accent Colour 2",
+      name: "accent2",
+      placeholder: "ex. sky-300",
+      input: accent2Input,
+      setInput: setAccent2Input,
+    },
     {
       text: "Background Colour",
       name: "background",
       placeholder: "ex. slate-800",
+      input: backgroundInput,
+      setInput: setBackgroundInput,
     },
-    { text: "Text Colour (Main)", name: "text1", placeholder: "ex. white" },
+    {
+      text: "Text Colour (Main)",
+      name: "text1",
+      placeholder: "ex. black",
+      input: text1Input,
+      setInput: setText1Input,
+    },
     {
       text: "Text Colour (Secondary)",
       name: "text2",
-      placeholder: "ex. black",
+      placeholder: "ex. white",
+      input: text2Input,
+      setInput: setText2Input,
     },
   ];
 
@@ -53,20 +81,23 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
           />
         );
       })}
-      <CustomButton
-        text="black"
-        colour="purple-300"
+      <button
+        className={`bg-purple-300 transition ease-in-out hover:bg-purple-400 drop-shadow-lg h-[45px] px-5 mx-5 shadow rounded-md text-lg font-medium text-black`}
         onClick={() => {
-          console.log("RESET")
           setNewColour("accent1", "orange-400");
+          setAccent1Input("");
           setNewColour("accent2", "sky-300");
+          setAccent2Input("");
           setNewColour("background", "slate-800");
-          setNewColour("text1", "white");
-          setNewColour("text2", "black");
+          setBackgroundInput("");
+          setNewColour("text1", "black");
+          setText1Input("");
+          setNewColour("text2", "white");
+          setText2Input("");
         }}
       >
         Reset
-      </CustomButton>
+      </button>
     </div>
   );
 }
