@@ -30,7 +30,7 @@ export default function ThemeInput(props: any) {
     <div className="my-3">
       <span className="text-white">{text}: </span>
       <button
-        className="bg-white px-2 rounded-sm"
+        className="bg-slate-700 hover:bg-slate-600 px-2 rounded-sm text-white"
         onClick={() => {
           setShowModal(true);
         }}
@@ -39,7 +39,7 @@ export default function ThemeInput(props: any) {
       </button>
       <input
         type="text"
-        className="m-3 rounded-md py-1 px-3"
+        className="m-3 rounded-md py-1 px-3 bg-slate-700 text-white"
         placeholder={placeholder}
         name={name}
         onChange={(event) => {
