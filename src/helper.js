@@ -6,9 +6,9 @@ const colours =
 let result = "";
 
 for (const colour of colours) {
-  result += `bg-${colour}-50 `;
+  result += `hover:bg-${colour}-50 `;
   for (let i = 100; i <= 900; i += 100) {
-    result += `bg-${colour}-${i} `;
+    result += `hover:bg-${colour}-${i} `;
   }
 }
 

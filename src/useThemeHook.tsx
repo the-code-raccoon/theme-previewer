@@ -6,11 +6,11 @@ export default function useThemeHook() {
     accent2: "sky-300",
   });
 
-  const setNewColour = (type: string, colour: string) => {
+  const setNewColour = function (type: string, colour: string) {
     setTheme((prev) => {
       return { ...prev, [type]: colour };
     });
   };
 
-  return [theme, setNewColour];
+  return { theme, setNewColour };
 }

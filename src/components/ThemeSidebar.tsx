@@ -2,7 +2,7 @@ interface ThemeSidebarProps {
   setNewColour: Function;
 }
 
-export default function ThemeSidebar(props: any) {
+export default function ThemeSidebar(props: ThemeSidebarProps) {
   const { setNewColour } = props;
 
   const validTailwindColour = (str: string) => {
@@ -27,11 +27,11 @@ export default function ThemeSidebar(props: any) {
           <input
             type="text"
             className="m-3 rounded-md py-1 px-3"
-            placeholder="ffffff"
+            placeholder="ex. sky-300"
             onChange={(event) => {
-              const colour = event.target.value;
-              if (validTailwindColour(colour)) {
-                setNewColour("accent1", colour);
+              if (validTailwindColour(event.target.value)) {
+                console.log(event.target.name)
+                setNewColour("accent1", event.target.value);
               }
             }}
           />
