@@ -16,5 +16,13 @@
 
 export const darker = (colour: string) => {
   const [base, shade] = colour.split("-");
+  if (shade === "50") return `${base}-100`;
+  if (shade === "900") return `${base}-900`
   return `${base}-${parseInt(shade) + 100}`;
+};
+
+export const lighter = (colour: string) => {
+  const [base, shade] = colour.split("-");
+  if (shade === "50" || shade === "100") return `${base}-50`;
+  return `${base}-${parseInt(shade) - 100}`;
 };
