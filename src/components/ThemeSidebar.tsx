@@ -1,3 +1,4 @@
+import CustomButton from "./CustomButton";
 import ThemeInput from "./ThemeInput";
 
 interface ThemeSidebarProps {
@@ -40,20 +41,32 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
   return (
     <div className="bg-slate-900 w-[600px] min-h-screen p-5 text-lg">
       <div>
-        <div>
-          <h1 className="text-xl text-white">Input tailwind colour code</h1>
-        </div>
-        {colourInputs.map((colourInput) => {
-          return (
-            <ThemeInput
-              key={colourInput.name}
-              {...colourInput}
-              onChangeInput={onChangeInput}
-              setNewColour={setNewColour}
-            />
-          );
-        })}
+        <h1 className="text-xl text-white">Input tailwind colour code</h1>
       </div>
+      {colourInputs.map((colourInput) => {
+        return (
+          <ThemeInput
+            key={colourInput.name}
+            {...colourInput}
+            onChangeInput={onChangeInput}
+            setNewColour={setNewColour}
+          />
+        );
+      })}
+      <CustomButton
+        text="black"
+        colour="purple-300"
+        onClick={() => {
+          console.log("RESET")
+          setNewColour("accent1", "orange-400");
+          setNewColour("accent2", "sky-300");
+          setNewColour("background", "slate-800");
+          setNewColour("text1", "white");
+          setNewColour("text2", "black");
+        }}
+      >
+        Reset
+      </CustomButton>
     </div>
   );
 }

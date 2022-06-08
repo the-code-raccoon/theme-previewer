@@ -73,6 +73,7 @@ export default function ThemeInput(props: any) {
               const colourlist = [];
               colourlist.push(
                 <button
+                  key={`${colour}-50`}
                   className={`bg-${colour}-50 h-[30px] w-[30px] border-solid border-slate-900 border`}
                   onClick={selectColour}
                 />
@@ -80,6 +81,7 @@ export default function ThemeInput(props: any) {
               for (let i = 100; i <= 900; i += 100) {
                 colourlist.push(
                   <button
+                    key={`${colour}-${i}`}
                     className={`bg-${colour}-${i} h-[30px] w-[30px] border-solid border-slate-900 border`}
                     onClick={selectColour}
                   />
@@ -87,7 +89,7 @@ export default function ThemeInput(props: any) {
               }
 
               return (
-                <div className="flex flex-row align-center">
+                <div key={colour} className="flex flex-row align-center">
                   {colour}
                   {colourlist}
                 </div>
