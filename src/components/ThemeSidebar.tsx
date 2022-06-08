@@ -9,6 +9,7 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
 
   const validTailwindColour = (str: string) => {
     str = str.toLowerCase();
+    if (str === "black" || str === "white") return true;
     return /^(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(50|[1-9]00)$/gm.test(
       str
     );

@@ -11,7 +11,11 @@ export default function ProfileCard(props: ProfileCardProps) {
   const { name, colour, pic, theme } = props;
 
   return (
-    <div className={`mx-auto mb-10 bg-${lighter(theme.background)} rounded-xl shadow-md overflow-hidden w-72`}>
+    <div
+      className={`mx-auto mb-10 bg-${lighter(
+        theme.background
+      )} rounded-xl shadow-md overflow-hidden w-72`}
+    >
       <div>
         <div>
           <div
@@ -31,7 +35,13 @@ export default function ProfileCard(props: ProfileCardProps) {
           >
             {name}
           </a>
-          <p className="mt-2 text-slate-300">
+          <p
+            className={
+              theme.text2 === "white"
+                ? "mt-2 text-slate-300"
+                : "mt-2 text-slate-900"
+            }
+          >
             Getting a new business off the ground is a lot of hard work. Here
             are five ideas you can use to find your first customers.
           </p>

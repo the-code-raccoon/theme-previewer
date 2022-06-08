@@ -28,7 +28,13 @@ export default function Card1(props: any) {
           >
             Finding customers for your new business
           </a>
-          <p className="mt-2 text-slate-300">
+          <p
+            className={
+              theme.text2 === "white"
+                ? "mt-2 text-slate-300"
+                : "mt-2 text-slate-900"
+            }
+          >
             Getting a new business off the ground is a lot of hard work. Here
             are five ideas you can use to find your first customers.
           </p>
