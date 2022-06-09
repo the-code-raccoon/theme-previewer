@@ -1,4 +1,4 @@
-import { lighter } from "../helper";
+import { darker, lighter } from "../helper";
 
 interface ProfileCardProps {
   name: string;
@@ -14,7 +14,7 @@ export default function ProfileCard(props: ProfileCardProps) {
     <div
       className={`mx-auto mb-10 bg-${lighter(
         theme.background
-      )} rounded-xl shadow-md overflow-hidden w-72`}
+      )} rounded-xl shadow-md overflow-hidden w-72 border border-solid border-${darker(theme.background)}`}
     >
       <div>
         <div>

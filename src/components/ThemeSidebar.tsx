@@ -123,8 +123,8 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
             setAccent1Input("cyan-600");
             setNewColour("accent2", "sky-200");
             setAccent2Input("sky-200");
-            setNewColour("background", "green-50");
-            setBackgroundInput("green-50");
+            setNewColour("background", "green-100");
+            setBackgroundInput("green-100");
             setNewColour("text1", "black");
             setText1Input("black");
             setNewColour("text2", "black");

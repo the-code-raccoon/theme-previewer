@@ -1,4 +1,4 @@
-import { lighter } from "../helper";
+import { darker, lighter } from "../helper";
 
 export default function Card1(props: any) {
   const { theme } = props;
@@ -6,7 +6,7 @@ export default function Card1(props: any) {
     <div
       className={`max-w-md mx-auto mb-10 bg-${lighter(
         theme.background
-      )} rounded-xl shadow-md overflow-hidden md:max-w-2xl`}
+      )} rounded-xl shadow-md overflow-hidden md:max-w-2xl border border-solid border-${darker(theme.background)}`}
     >
       <div className="md:flex">
         <div className="md:shrink-0">
