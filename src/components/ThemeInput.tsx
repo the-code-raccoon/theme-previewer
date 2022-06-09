@@ -37,7 +37,7 @@ export default function ThemeInput(props: any) {
     <div className="my-3">
       <span className="text-white">{text}: </span>
       <button
-        className="bg-slate-700 hover:bg-slate-600 px-2 rounded-sm text-white"
+        className="bg-slate-700 hover:bg-slate-600 px-3 py-1 ml-2 rounded-md shadow text-white"
         onClick={() => {
           setShowModal(true);
         }}
@@ -59,7 +59,7 @@ export default function ThemeInput(props: any) {
       <div
         className={
           showModal
-            ? "fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full"
+            ? "fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full z-5"
             : "hidden"
         }
         onClick={() => setShowModal(false)}
@@ -67,7 +67,7 @@ export default function ThemeInput(props: any) {
       <div
         className={
           showModal
-            ? "absolute inset-0 w-[430px] m-auto p-5 shadow-lg rounded-md bg-slate-800"
+            ? "absolute inset-0 w-[430px] h-[900px] m-auto p-5 shadow-lg rounded-md bg-slate-800 z-6"
             : "hidden"
         }
       >
@@ -121,13 +121,12 @@ export default function ThemeInput(props: any) {
           </div>
           <div className="items-center px-4 py-3">
             <button
-              id="ok-btn"
               className="px-4 py-2 bg-green-500 text-white text-base font-medium rounded-md w-full shadow-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300"
               onClick={() => {
                 setShowModal(false);
               }}
             >
-              OK
+              Close
             </button>
           </div>
         </div>

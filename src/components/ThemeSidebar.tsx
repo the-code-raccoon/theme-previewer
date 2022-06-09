@@ -68,9 +68,6 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
 
   return (
     <div className="bg-slate-900 w-[600px] min-h-screen p-5 text-lg">
-      <div>
-        <h1 className="text-xl text-white">Input tailwind colour code</h1>
-      </div>
       {colourInputs.map((colourInput) => {
         return (
           <ThemeInput
@@ -81,23 +78,96 @@ export default function ThemeSidebar(props: ThemeSidebarProps) {
           />
         );
       })}
-      <button
-        className={`bg-purple-300 transition ease-in-out hover:bg-purple-400 z-0 rop-shadow-lg h-[45px] px-5 mx-5 shadow rounded-md text-lg font-medium text-black`}
-        onClick={() => {
-          setNewColour("accent1", "orange-400");
-          setAccent1Input("");
-          setNewColour("accent2", "sky-300");
-          setAccent2Input("");
-          setNewColour("background", "slate-800");
-          setBackgroundInput("");
-          setNewColour("text1", "black");
-          setText1Input("");
-          setNewColour("text2", "white");
-          setText2Input("");
-        }}
-      >
-        Reset
-      </button>
+      <div className="w-100 flex justify-center">
+        <button
+          className={`bg-purple-300 transition ease-in-out hover:bg-purple-400 rop-shadow-lg h-[45px] px-5 mx-5 shadow rounded-md text-lg font-medium text-black`}
+          onClick={() => {
+            setNewColour("accent1", "orange-400");
+            setAccent1Input("");
+            setNewColour("accent2", "sky-300");
+            setAccent2Input("");
+            setNewColour("background", "slate-800");
+            setBackgroundInput("");
+            setNewColour("text1", "black");
+            setText1Input("");
+            setNewColour("text2", "white");
+            setText2Input("");
+          }}
+        >
+          Reset
+        </button>
+      </div>
+      <div className="text-white mt-8 flex flex-col">
+        <h1>Custom Themes</h1>
+        <button
+          className="bg-slate-700 py-2 px-3 rounded-md mt-3"
+          onClick={() => {
+            setNewColour("accent1", "orange-400");
+            setAccent1Input("orange-400");
+            setNewColour("accent2", "sky-300");
+            setAccent2Input("sky-300");
+            setNewColour("background", "slate-800");
+            setBackgroundInput("slate-800");
+            setNewColour("text1", "black");
+            setText1Input("black");
+            setNewColour("text2", "white");
+            setText2Input("white");
+          }}
+        >
+          Default
+        </button>
+        <button
+          className="bg-slate-700 py-2 px-3 rounded-md mt-3"
+          onClick={() => {
+            setNewColour("accent1", "cyan-600");
+            setAccent1Input("cyan-600");
+            setNewColour("accent2", "sky-200");
+            setAccent2Input("sky-200");
+            setNewColour("background", "green-50");
+            setBackgroundInput("green-50");
+            setNewColour("text1", "black");
+            setText1Input("black");
+            setNewColour("text2", "black");
+            setText2Input("black");
+          }}
+        >
+          Seafoam
+        </button>
+        <button
+          className="bg-slate-700 py-2 px-3 rounded-md mt-3"
+          onClick={() => {
+            setNewColour("accent1", "fuchsia-400");
+            setAccent1Input("fuchsia-400");
+            setNewColour("accent2", "pink-200");
+            setAccent2Input("pink-200");
+            setNewColour("background", "stone-800");
+            setBackgroundInput("stone-800");
+            setNewColour("text1", "black");
+            setText1Input("black");
+            setNewColour("text2", "white");
+            setText2Input("white");
+          }}
+        >
+          Black Bubblegum
+        </button>
+        <button
+          className="bg-slate-700 py-2 px-3 rounded-md mt-3"
+          onClick={() => {
+            setNewColour("accent1", "red-800");
+            setAccent1Input("red-800");
+            setNewColour("accent2", "teal-500");
+            setAccent2Input("teal-500");
+            setNewColour("background", "purple-50");
+            setBackgroundInput("purple-50");
+            setNewColour("text1", "black");
+            setText1Input("black");
+            setNewColour("text2", "black");
+            setText2Input("black");
+          }}
+        >
+          West Coast
+        </button>
+      </div>
     </div>
   );
 }
