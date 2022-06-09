@@ -14,8 +14,8 @@ Theme previewer can help you make make a multi-colour theme using the built-in c
 
 ## Final Product
 
-![Default]()
-![Black BubbleGum]()
+![Default](https://github.com/the-code-raccoon/theme-previewer/blob/main/docs/default-theme.png)
+![Black BubbleGum](https://github.com/the-code-raccoon/theme-previewer/blob/main/docs/black-bubblegum.png)
 
 # Features
 ## Make a Theme
